@@ -79,32 +79,61 @@ def main():
     print("3. Volume")
     print("4. Temperatura")
     print("5. Área")
+    
+    try:
+        choice = int(input("Digite o número da categoria: "))
 
+        # Comprimento
+        if choice == 1:
+            value = float(input("Valor a ser convertido: "))
+            from_unit = input("Digite a unidade de origem: ")
+            to_unit = input("Digite a unidade de destino: ")
+            print(f"{value} {from_unit} é igual a {convert_length(value, from_unit, to_unit)}")
 
-    choice = int(input("digite o número da categoria: "))
-#comprimento
-    if choice == 1:
-        value = float(input(" valor a ser convertido: "))
-        from_unit = input("Digite a unidade de origem :")
-        to_unit = input("digite a unidade de destino: ")
-        print(f"{value} {from_unit} é igual a {convert_length(value, from_unit, to_unit)}")
-#massa
-    if choice == 2:
-        value = float(input(" valor a ser convertido: "))
-        from_unit = input("Digite a unidade de origem: ")
-        to_unit =input("Digite a unidade de destino: ")
-        print(f"{value} {from_unit} é igual a {convert_mass(value, from_unit, to_unit)}")
+        # Massa
+        elif choice == 2:
+            value = float(input("Valor a ser convertido: "))
+            from_unit = input("Digite a unidade de origem: ")
+            to_unit = input("Digite a unidade de destino: ")
+            print(f"{value} {from_unit} é igual a {convert_mass(value, from_unit, to_unit)}")
 
+        # Volume
+        elif choice == 3:
+            value = float(input("Valor a ser convertido: "))
+            from_unit = input("Digite a unidade de origem: ")
+            to_unit = input("Digite a unidade de destino: ")
+            print(f"{value} {from_unit} é igual a {convert_volume(value, from_unit, to_unit)}")
+
+        # Temperatura
+        elif choice == 4:
+            value = float(input("Digite o valor da temperatura: "))
+            from_unit = input("Digite a unidade de origem (Celsius, Fahrenheit, Kelvin): ").capitalize()
+            to_unit = input("Digite a unidade de destino (Celsius, Fahrenheit, Kelvin): ").capitalize()
+
+            result = convert_temperature(value, from_unit, to_unit)
+            print(f"{value} {from_unit} é igual a {result} {to_unit}")
+
+        # Área
+        elif choice == 5:
+            value = float(input("Valor a ser convertido: "))
+            from_unit = input("Digite a unidade de origem: ")
+            to_unit = input("Digite a unidade de destino: ")
+            print(f"{value} {from_unit} é igual a {convert_area(value, from_unit, to_unit)}")
+
+        else:
+            print("Erro: Categoria inválida. Escolha um número entre 1 e 5.")
+
+    except ValueError:
+        print("Erro: Insira um valor numérico válido.")
 # Chamar a função principal
 if __name__ == "__main__":
     main()
 
 """
-Dia 05/03/2025
-passos para os proximos dias
-acionar as demais funções 
-criar uma janela
-e utilizar botões
+Dia 28/03/2025
+Futuros Updates:
+adcionar Velocidade e Tempo
+criar uma janela e utilizar botões
 Adicionar mais medidas
 Mais valores 
 Criar um Executavél
