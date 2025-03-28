@@ -29,6 +29,19 @@ Executar o código
 Para rodar o conversor, utilize:
 python conversor.py
 ==============================================================================================================================================================================================================================================================================
+Update: 28/03/2025
+Correção do try-except:
+
+A parte de entrada do número da categoria agora está envolvida por um try-except. Isso impede que o programa trave caso o usuário insira um valor não numérico.
+
+A exceção captura o erro de ValueError e exibe uma mensagem informando que o valor inserido é inválido, encerrando a função principal (main) se houver erro.
+
+Correção no fluxo de execução:
+
+A lógica de escolha das categorias foi ajustada para garantir que o programa só continue caso a entrada do usuário seja válida.
+
+As verificações de unidades inválidas foram mantidas nas funções de conversão de unidades.
+==============================================================================================================================================================================================================================================================================
 Como Usar
 Escolha a categoria:
 
